@@ -10,7 +10,7 @@ import (
 	"fmt"
 )
 
-func ExampleURLGlob_getURLs_output() {
+func ExampleURLGlob_GetURLs_output() {
 	getURLsTest("google.ca")
 	getURLsTest("site.{one,two,three}.com")
 	getURLsTest("site.{one,two,three}")
@@ -55,7 +55,7 @@ func ExampleURLGlob_getURLs_output() {
 
 }
 
-func ExampleURLGlob_getURLs_errors() {
+func ExampleURLGlob_GetURLs_errors() {
 	getURLsTest("site[8].com")
 	getURLsTest("site[8-].com")
 	getURLsTest("site[8-a].com")
