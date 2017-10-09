@@ -17,8 +17,11 @@ import (
 // Constant and data type/structure definitions
 
 const (
+	// URLPlain stands for the part of url is of plain text
 	URLPlain = iota
+	// URLSet stands for the part of url is of a set, e.g., `{one,two,three}`
 	URLSet
+	// URLRange stands for the part of url is of a range, e.g., `[1-100]`
 	URLRange
 )
 
@@ -28,6 +31,7 @@ type URLPattern struct {
 	pattern []string
 }
 
+// URLGlob is used for url glob transformation.
 type URLGlob struct {
 	URL     string
 	urlGlob []URLPattern
@@ -65,6 +69,7 @@ func (g *URLGlob) GetURLs(ndx int) (ret []string) {
 	return
 }
 
+// Prefix prefixes the given slice with the given prefix for each element
 func Prefix(in []string, prefix string) (ret []string) {
 	for _, p := range in {
 		ret = append(ret, prefix+p)
