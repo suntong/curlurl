@@ -79,7 +79,7 @@ func (g *URLGlob) Parse(abortOn errorHandling) *URLGlob {
 	if len(indices) == 0 {
 		// no glob, return whole string as single entry
 		g.urlGlob = []URLPattern{
-			URLPattern{ptype: URLPlain, pattern: []string{g.URL}}}
+			{ptype: URLPlain, pattern: []string{g.URL}}}
 		return g
 	}
 	// ii is char pointer into g.URL; jj is index of slice indices
